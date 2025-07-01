@@ -189,9 +189,14 @@ a {
   padding: 0;
   position: relative;
   left: 0;
+  display: block;
+  width: 100%;
+  clear: both;
 
   ul {
     margin-left: -15px;
+    display: block;
+    width: 100%;
 
     li {
       float: none;
@@ -199,6 +204,9 @@ a {
       margin: 0;
       padding-bottom: 2px;
       text-align: left;
+      display: block;
+      width: 100%;
+      clear: both;
 
       a {
         .user-select(none);
@@ -210,7 +218,8 @@ a {
         font-size: 16px;
         font-weight: normal;
         overflow: hidden;
-        padding: 10px 15px;
+        padding: 10px 45px 10px 15px;
+        position: relative;
         text-shadow: 0 -1px 1px rgba(0,0,0,0.25), -2px 0 1px rgba(0,0,0,0.25);
 
         &:hover {
@@ -231,6 +240,23 @@ a {
       }
     }
   }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Ensure elements after main menu are properly positioned
+#main-menu + *,
+.tabs-buttons,
+div[class*="tabs"],
+div[class*="button"] {
+  clear: both;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
 }
 
 #footer {
